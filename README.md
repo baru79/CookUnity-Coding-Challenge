@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![alt text](image-3.png)
 
-## Getting Started
+# Engineer Coding Challenge
 
-First, run the development server:
+## Purpose
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+As part of CookUnity's selection process, we request that candidates complete a small
+project aimed at helping us grasp their skills, experiences, creativity, problem-solving
+abilities, and knowledge.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Backend
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Scope
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Develop a RESTful API centered around Pokémon Cards that can be integrated with a
+frontend or application, featuring the following functionalities:
 
-## Learn More
+- Creation of a new card.
+- Updating an existing card.
+- Retrieval of a specific card.
+- Retrieval of all cards.
+- Deletion of a card.
+- Card Battle Simulation: Given a selected card, we aim to determine whether it
+  can defeat another card in a single attack. This assessment considers factors
+  such as weaknesses and resistances based on types. For instance, if Feraligatr
+  (Water) attacks Charizard, it might not initially succeed, but based on Charizard's
+  weakness (Water) could result in a 2x damage multiplier, granting victory to
+  Feraligatr. Conversely, consider Scizor (Steel) facing Pikachu; here, Scizor's
+  attack might only deal 40 points of damage based on the Pikachu's resistance
+  (20 less for Steel), rendering it unsuccessful in the battle. You can see the details
+  of the cards below.
+- Identify Card Weaknesses and Resistances: Given a selected card, retrieve a list
+  detailing which cards it is weak against and which it is resistant to. For example
+  choosing Pikachu would reveal Onix as a weakness and Scizor as a resistance.
 
-To learn more about Next.js, take a look at the following resources:
+![alt text](image-2.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![alt text](image-1.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Notes
 
-## Deploy on Vercel
+- The solution must be implemented in Typescript. Feel free to use any framework.
+  (e.g., NestJS)
+- Postgres must be used as the database engine.
+- Feel free to make any necessary assumptions regarding required fields, data
+  structure, and validations.
+- Data persistence is required.
+- The solution should be hosted in a repository accessible to the CookUnity
+  collaborator who issued the challenge.
+- Upon completion, a document outlining the assumptions made, the implemented
+  solution, and instructions for running it should be submitted to the CookUnity
+  collaborator.
+- Documentation of the API endpoints (e.g., Swagger) should be provided.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Bonus
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Authentication
+- Filtering
+- Pagination
+- Unit testing
+- Deployment of the API to a cloud service (AWS, Azure, Google Cloud, etc.)
+- Utilization of AWS services (API Gateway, Lambda, EC2, ECS, EKS, S3, etc.)
+
+## Frontend
+
+### Scope
+
+Create a view capable of displaying all available cards, alongside another view
+dedicated to showcasing a single selected card, with an option to engage in battles
+against other cards.
+
+![alt text](image.png)
+
+### Notes
+
+- The solution must be implemented in React with Typescript. Feel free to use any
+  framework if you want. (e.g., Next.js)
+- Feel free to make any necessary assumptions regarding required fields, data
+  structure, and validations.
+- Feel free to use any library or css preprocessor. (e.g., Styled Components, Sass)
+- The solution should be hosted in a repository accessible to the CookUnity
+  collaborator who issued the challenge.
+- Upon completion, a document outlining the assumptions made, the implemented
+  solution, and instructions for running it should be submitted to the CookUnity
+  collaborator.
+
+### Bonus
+
+- Authentication
+- Filtering
+- Pagination
+- Unit testing or e2e tests
+- Deployment of the frontend
+
+## Solution for FE Code Challenge
+
+### Run app
+
+1. After clone the repo.
+
+2. Open a terminal and on the repo directory run:
+
+   ```
+   npm run dev
+   ```
+
+3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+4. Enjoy the app! 🙂
