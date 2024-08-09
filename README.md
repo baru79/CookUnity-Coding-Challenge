@@ -94,6 +94,10 @@ against other cards.
 
 ## Solution for FE Code Challenge
 
+### Demo
+
+![demo-video](/demo.gif)
+
 ### Run app
 
 1. After clone the repo.
