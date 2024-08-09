@@ -98,6 +98,19 @@ against other cards.
 
 ![demo-video](/demo.gif)
 
+### Assumptions
+
+The pokemon application was implemented in `Next.js` along with the following dependencies (among the most important ones):
+
+- Typescript
+- Tailwind CSS
+- Shadcn
+- Axios
+- Prettier
+- Eslint
+
+Because only the FE part was done, the pokemons public api was used (https://pokeapi.co/).
+
 ### Run app
 
 1. After clone the repo.
