@@ -98,7 +98,7 @@ against other cards.
 
 ![demo-video](/demo.gif)
 
-### Assumptions
+### Implementation - Dependencies
 
 The pokemon application was implemented in `Next.js` along with the following dependencies (among the most important ones):
 
@@ -109,7 +109,63 @@ The pokemon application was implemented in `Next.js` along with the following de
 - Prettier
 - Eslint
 
-Because only the FE part was done, the pokemons public api was used (https://pokeapi.co/).
+### Assumptions
+
+Since only the FE part was done, due to the lack of BE, the Pokemon public [PokeAPI](https://pokeapi.co/) was used to represent the Pokemon's data.
+
+#### Pokemon Card
+
+The following fields are used:
+
+- `Name`:
+  The name of the pokemon.
+
+- `HP (Hit Points)`:
+  It is a value that determines how much damage a Pokémon can receive.
+
+- `Types`:
+  Types are properties for Pokémon and their moves. Each type has three properties: which types of Pokémon it is super effective against, which types of Pokémon it is not very effective against, and which types of Pokémon it is completely ineffective against.
+
+- `Abilities`:
+  Abilities provide passive effects for Pokémon in battle or in the overworld. Pokémon have multiple possible abilities but can have only one ability at a time.
+
+- `Weight`:
+  The weight of the Pokemon in hectograms.
+
+  ##### Notes
+
+  Due [pokemon API](https://pokeapi.co/) doesn't have `Expansion` and `Rarity`, those where replaced by `Abilities` and `Weight`.
+
+#### Battle
+
+The following custom function, that returns a random winner, was implemented to simulate a battle between two pokemons.
+
+```javascript
+export function battle(player1: Player, player2: Player) {
+  // Calculate random number for both players by multiply HP with a random factor
+  const player1Value = Math.ceil(player1.hp * getRandomNumber(1, 10));
+  const player2Value = Math.ceil(player2.hp * getRandomNumber(1, 10));
+
+  // Calculate the absolute difference between player1 and BATTLE_GOAL, store it in x1
+  const x1 = Math.abs(BATTLE_GOAL - player1Value);
+
+  // Calculate the absolute difference between player2 and BATTLE_GOAL, store it in y1
+  const y1 = Math.abs(BATTLE_GOAL - player2Value);
+
+  if (x1 > y1) {
+    // Return x if x is closer to BATTLE_GOAL
+    return `${player1.name} wins!`;
+  }
+
+  // Return y if y is closer to BATTLE_GOAL
+  if (y1 > x1) {
+    return `${player2.name} wins!`;
+  }
+
+  // Return 0 if x and y are equidistant from BATTLE_GOAL
+  return "No winners - try again!";
+}
+```
 
 ### Run app
 
